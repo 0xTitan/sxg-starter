@@ -40,21 +40,20 @@ jobs:
       #  run: npm run build
 
       #gen certificate
-      #- name: Generate Certificate and SXG
-      #  run: |
-      #    mkdir -p certs sxg
-      #    openssl req -newkey rsa:2048 -nodes -keyout certs/priv.key -out certs/cert.csr -subj "/C=US/ST=State/L=City/O=Organization/CN=zk-sxg.web.app"
-      #    openssl x509 -req -days 90 -in certs/cert.csr -signkey certs/priv.key -out certs/cert.pem \
-      #      -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:zk-sxg.web.app")
-      #    ../go/bin/gen-certurl -pem certs/cert.pem -ocsp <(echo ocsp) > certs/cert.cbor
-      #    ../go/bin/gen-signedexchange \
-      #      -uri https://zk-sxg.web.app/hello.html \
-      #      -content sxg/payload.html \
-      #      -certificate certs/cert.pem \
-      #      -privateKey certs/priv.key \
-      #      -certUrl https://zk-sxg.web.app/cert.cbor \
-      #      -validityUrl https://zk-sxg.web.app/resource.validity.msg \
-      #      -o public/zk-sxg.web.app.hello.sxg
+      - name: Generate Certificate and SXG
+       run: |
+         openssl ecparam -out priv.key -name prime256v1 -genkey
+         openssl req -new -sha256 -key priv.key -out cert.csr -subj '/CN=zk-sxg.web.app/O=Test/C=US'
+         openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:zk-sxg.web.app")
+         ../go/bin/gen-certurl -pem certs/cert.pem -ocsp <(echo ocsp) > certs/cert.cbor
+         ../go/bin/gen-signedexchange \
+           -uri https://zk-sxg.web.app/hello.html \
+           -content sxg/payload.html \
+           -certificate certs/cert.pem \
+           -privateKey certs/priv.key \
+           -certUrl https://zk-sxg.web.app/cert.cbor \
+           -validityUrl https://zk-sxg.web.app/resource.validity.msg \
+           -o public/zk-sxg.web.app.hello.sxg
 
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase
