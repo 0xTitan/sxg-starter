@@ -1,0 +1,65 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main # Run this workflow when pushing to the main branch. Change if needed.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # Specify your required Node.js version
+
+      # Step 3: Set up Go
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "1.18" # Specify the Go version you need
+
+      # Step 4: Install the Signed Exchange Library
+      - name: Install Signed Exchange Library
+        run: go install github.com/WICG/webpackage/go/signedexchange/cmd/...@latest
+
+      # Install dependencies
+      - name: Install dependencies
+        working-directory: ./functions
+        run: npm install
+
+      # Build the project
+      #- name: Build project
+      #  run: npm run build
+
+      #gen certificate
+      #- name: Generate Certificate and SXG
+      #  run: |
+      #    mkdir -p certs sxg
+      #    openssl req -newkey rsa:2048 -nodes -keyout certs/priv.key -out certs/cert.csr -subj "/C=US/ST=State/L=City/O=Organization/CN=zk-sxg.web.app"
+      #    openssl x509 -req -days 90 -in certs/cert.csr -signkey certs/priv.key -out certs/cert.pem \
+      #      -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:zk-sxg.web.app")
+      #    ../go/bin/gen-certurl -pem certs/cert.pem -ocsp <(echo ocsp) > certs/cert.cbor
+      #    ../go/bin/gen-signedexchange \
+      #      -uri https://zk-sxg.web.app/hello.html \
+      #      -content sxg/payload.html \
+      #      -certificate certs/cert.pem \
+      #      -privateKey certs/priv.key \
+      #      -certUrl https://zk-sxg.web.app/cert.cbor \
+      #      -validityUrl https://zk-sxg.web.app/resource.validity.msg \
+      #      -o public/zk-sxg.web.app.hello.sxg
+
+      # Deploy to Firebase Hosting
+      - name: Deploy to Firebase
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --only hosting
