@@ -54,6 +54,7 @@ jobs:
           -certUrl https://zk-sxg.web.app/cert.cbor \
           -validityUrl https://zk-sxg.web.app/resource.validity.msg \
           -o functions/sxg/zk-sxg.web.app.hello.sxg
+          cp functions/sxg/zk-sxg.web.app.hello.sxg public
 
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase
