@@ -56,6 +56,7 @@ jobs:
           -o functions/sxg/zk-sxg.web.app.hello.sxg
           cp functions/sxg/zk-sxg.web.app.hello.sxg public
           cp cert.cbor public
+          cp cert.pem public
 
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase
