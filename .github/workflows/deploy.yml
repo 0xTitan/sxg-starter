@@ -17,10 +17,7 @@ jobs:
       - name: Load environment variables from .env
         run: |
           if [ -f .env ]; then
-            echo ".env file contents:"
-            cat .env
-          else
-            echo ".env file not found!"
+            export $(cat .env | xargs)
           fi
         shell: bash
 
@@ -52,7 +49,7 @@ jobs:
       #gen certificate
       - name: Generate Certificate and SXG
         env:
-          SITE_NAME: ${{ env.SITE_NAME }}
+          SITE_URL: ${SITE_NAME}
         run: |
           # Extract domain from SITE_NAME (e.g., https://example.com -> example.com)
           DOMAIN=$(echo $SITE_NAME | sed -E 's~https?://~~')
