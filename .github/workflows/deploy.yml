@@ -14,6 +14,13 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Load environment variables from .env
+        run: |
+          if [ -f .env ]; then
+            export $(cat .env | xargs)
+          fi
+        shell: bash
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -41,20 +48,25 @@ jobs:
 
       #gen certificate
       - name: Generate Certificate and SXG
+        env:
+          SITE_URL: ${{ env.SITE_NAME }}
         run: |
+          # Extract domain from SITE_URL (e.g., https://example.com -> example.com)
+          DOMAIN=$(echo $SITE_NAME | sed -E 's~https?://~~')
+
           openssl ecparam -out priv.key -name prime256v1 -genkey
-          openssl req -new -sha256 -key priv.key -out cert.csr -subj '/CN=zk-sxg.web.app/O=Test/C=US'
-          openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:zk-sxg.web.app")
+          openssl req -new -sha256 -key priv.key -out cert.csr -subj '/CN=$SITE_NAME/O=Test/C=US'
+          openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:$SITE_NAME")
           $HOME/go/bin/gen-certurl -pem cert.pem -ocsp <(echo ocsp)> cert.cbor
           $HOME/go/bin/gen-signedexchange \
-          -uri https://zk-sxg.web.app/hello.html \
+          -uri $DOMAIN/hello.html \
           -content ./functions/sxg/payload.html \
           -certificate cert.pem \
           -privateKey priv.key \
-          -certUrl https://zk-sxg.web.app/cert.cbor \
-          -validityUrl https://zk-sxg.web.app/resource.validity.msg \
-          -o functions/sxg/zk-sxg.web.app.hello.sxg
-          cp functions/sxg/zk-sxg.web.app.hello.sxg public
+          -certUrl $DOMAIN/cert.cbor \
+          -validityUrl $DOMAIN/resource.validity.msg \
+          -o functions/sxg/$SITE_NAME.hello.sxg
+          cp functions/sxg/$SITE_NAME.hello.sxg public
           cp cert.cbor public
           cp cert.pem public
 
