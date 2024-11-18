@@ -49,12 +49,12 @@ jobs:
       #gen certificate
       - name: Generate Certificate and SXG
         env:
-          SITE_URL: ${{ env.SITE_NAME }}
+          SITE_NAME: ${{ env.SITE_NAME }}
         run: |
-          # Extract domain from SITE_URL (e.g., https://example.com -> example.com)
+          # Extract domain from SITE_NAME (e.g., https://example.com -> example.com)
           DOMAIN=$(echo $SITE_NAME | sed -E 's~https?://~~')
 
-          echo "SITE_NAME: ${SITE_URL}"
+          echo "SITE_NAME: ${SITE_NAME}"
           echo "DOMAIN: ${DOMAIN}"
 
           openssl ecparam -out priv.key -name prime256v1 -genkey
