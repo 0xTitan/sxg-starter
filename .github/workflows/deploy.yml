@@ -50,7 +50,7 @@ jobs:
           fi
 
           # Extract domain from SITE_NAME (e.g., https://example.com -> example.com)
-          DOMAIN=$(echo $SITE_NAME | sed -E 's~https?://~~')
+          DOMAIN= https://${SITE_NAME}
 
           echo "SITE_NAME: ${SITE_NAME}"
           echo "DOMAIN: ${DOMAIN}"
