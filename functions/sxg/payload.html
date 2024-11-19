@@ -1,48 +1,1289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="auto-color">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+
+    <title>Hylé</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preload" as="style" href="https://blog.hyle.eu/assets/built/screen.css?v=f7524e6298" />
+    <link rel="preload" as="script" href="https://blog.hyle.eu/assets/built/casper.js?v=f7524e6298" />
+
+    <link rel="stylesheet" type="text/css" href="https://blog.hyle.eu/assets/built/screen.css?v=f7524e6298" />
+
+    <meta name="description" content="The lean blockchain that makes it easy to build provable apps.">
+    <link rel="icon" href="https://blog.hyle.eu/content/images/size/w256h256/2024/09/Hyl-_square_withbackground.png" type="image/png">
+    <link rel="canonical" href="https://blog.hyle.eu/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Hylé">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hylé">
+    <meta property="og:description" content="The lean blockchain that makes it easy to build provable apps.">
+    <meta property="og:url" content="https://blog.hyle.eu/">
+    <meta property="og:image" content="https://blog.hyle.eu/content/images/size/w1200/2024/10/band_image_hyle-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hylé">
+    <meta name="twitter:description" content="The lean blockchain that makes it easy to build provable apps.">
+    <meta name="twitter:url" content="https://blog.hyle.eu/">
+    <meta name="twitter:image" content="https://blog.hyle.eu/content/images/size/w1200/2024/10/band_image_hyle-1.jpg">
+    <meta name="twitter:site" content="@hyle_org">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="506">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hylé",
+        "url": "https://blog.hyle.eu/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.hyle.eu/content/images/2024/10/Hyl-_widelogo_lightbg.png"
         }
-        header {
-            background: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    },
+    "url": "https://blog.hyle.eu/",
+    "name": "Hylé",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.hyle.eu/content/images/size/w1200/2024/10/band_image_hyle-1.jpg",
+        "width": 1200,
+        "height": 506
+    },
+    "mainEntityOfPage": "https://blog.hyle.eu/",
+    "description": "The lean blockchain that makes it easy to build provable apps."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.101">
+    <link rel="alternate" type="application/rss+xml" title="Hylé" href="https://blog.hyle.eu/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.46/umd/portal.min.js" data-i18n="true" data-ghost="https://blog.hyle.eu/" data-key="ca212cb78c99f65ba6d55fb9ba" data-api="https://hyle.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/sodo-search.min.js" data-key="ca212cb78c99f65ba6d55fb9ba" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/main.css" data-sodo-search="https://hyle.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://blog.hyle.eu/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=f7524e6298"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=f7524e6298">
+    <script defer src="/public/member-attribution.min.js?v=f7524e6298"></script><style>:root {--ghost-accent-color: #E0482E;}</style>
+    <!-- Plausible analytics -->
+<script defer data-domain="blog.hyle.eu" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Simple HTML Page</h1>
+<body class="home-template is-head-left-logo has-serif-title has-sans-body has-cover">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head outer">
+        <div class="gh-head-inner inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="https://blog.hyle.eu">
+                        <img src="https://blog.hyle.eu/content/images/2024/10/Hyl-_widelogo_lightbg.png" alt="Hylé">
+                </a>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger" aria-label="Main Menu"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home nav-current"><a href="https://blog.hyle.eu/">Home</a></li>
+    <li class="nav-website"><a href="https://hyle.eu">Website</a></li>
+    <li class="nav-our-docs"><a href="https://docs.hyle.eu/">Our docs</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                    <div class="gh-head-members">
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                    </div>
+            </div>
+        </div>
     </header>
-    <main>
-        <p>This is a basic example of an HTML page with a header, main content, and a footer.</p>
-        <p>Feel free to edit and customize it to your needs!</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Simple HTML Page. All rights reserved.</p>
+
+    <div class="site-content">
+        
+<div class="site-header-content outer left-aligned">
+
+            <img class="site-header-cover"
+                srcset="/content/images/size/w300/2024/10/band_image_hyle-1.jpg 300w,
+                        /content/images/size/w600/2024/10/band_image_hyle-1.jpg 600w,
+                        /content/images/size/w1000/2024/10/band_image_hyle-1.jpg 1000w,
+                        /content/images/size/w2000/2024/10/band_image_hyle-1.jpg 2000w"
+                sizes="100vw"
+                src="/content/images/size/w2000/2024/10/band_image_hyle-1.jpg"
+                alt="Hylé"
+            />
+
+        <div class="site-header-inner inner">
+                    <img class="site-logo" src="https://blog.hyle.eu/content/images/2024/10/Hyl-_widelogo_lightbg.png" alt="Hylé">
+                <p class="site-description">The lean blockchain that makes it easy to build provable apps.</p>
+        </div>
+
+</div>
+
+<main id="site-main" class="site-main outer">
+<div class="inner posts">
+
+    <div class="post-feed">
+            
+<article class="post-card post tag-podcast tag-identity-and-authentication tag-voting post-card-large">
+
+    <a class="post-card-image-link" href="/podcast-2-kitty-rarimo/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/11/Youtube-episode-Nitya.png 300w,
+                    /content/images/size/w600/2024/11/Youtube-episode-Nitya.png 600w,
+                    /content/images/size/w1000/2024/11/Youtube-episode-Nitya.png 1000w,
+                    /content/images/size/w2000/2024/11/Youtube-episode-Nitya.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/11/Youtube-episode-Nitya.png"
+            alt="[Podcast #2] Kitty on Rarimo and ZK identities"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/podcast-2-kitty-rarimo/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">podcast</span>
+                </div>
+                <h2 class="post-card-title">
+                    [Podcast #2] Kitty on Rarimo and ZK identities
+                </h2>
+            </header>
+                <div class="post-card-excerpt">On the Hylé podcast, we talk about cool applications that leverage cryptography in general and zero-knowledge technology in particular, with a new guest for every episode.
+
+Kitty works at RariLabs and is a contributor to Rarimo, a ZK identity protocol. It allows users to make not only their identities private</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-11-14">Nov 14, 2024</time>
+                <span class="post-card-meta-length">12 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-talks dynamic">
+
+    <a class="post-card-image-link" href="/sylve-on-the-house-of-zk-podcast/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/photo_2024-10-28_14-58-45.jpg 300w,
+                    /content/images/size/w600/2024/10/photo_2024-10-28_14-58-45.jpg 600w,
+                    /content/images/size/w1000/2024/10/photo_2024-10-28_14-58-45.jpg 1000w,
+                    /content/images/size/w2000/2024/10/photo_2024-10-28_14-58-45.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/photo_2024-10-28_14-58-45.jpg"
+            alt="Sylve on the House of ZK podcast"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/sylve-on-the-house-of-zk-podcast/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">talks</span>
+                </div>
+                <h2 class="post-card-title">
+                    Sylve on the House of ZK podcast
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Sylve was invited to the House of ZK podcast, a podcast and media channel exploring everything ZK, from its fundamental principles to the latest advancements in the industry. There, he talked about Hylé and the future of lean blockchains!
+
+Watch the video or read our highlights below!
+
+
+What is preventing</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-30">Oct 30, 2024</time>
+                <span class="post-card-meta-length">18 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-talks dynamic">
+
+    <a class="post-card-image-link" href="/sylve-on-daria-strategys-podcast/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/com-s-cov-2.jpg 300w,
+                    /content/images/size/w600/2024/10/com-s-cov-2.jpg 600w,
+                    /content/images/size/w1000/2024/10/com-s-cov-2.jpg 1000w,
+                    /content/images/size/w2000/2024/10/com-s-cov-2.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/com-s-cov-2.jpg"
+            alt="Sylve on Daria Strategy&#x27;s podcast"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/sylve-on-daria-strategys-podcast/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">talks</span>
+                </div>
+                <h2 class="post-card-title">
+                    Sylve on Daria Strategy&#x27;s podcast
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Sylve was on Daria Strategy&#39;s podcast yesterday. You can watch the video or read the highlights below!
+
+The vision for Hylé is to enable everyone to benefit from the technology of provable applications, specifically zero-knowledge proofs.
+
+So, what are these? They were a very obscure research topic some</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-29">Oct 29, 2024</time>
+                <span class="post-card-meta-length">12 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-podcast tag-gaming tag-grants">
+
+    <a class="post-card-image-link" href="/podcast-1-matteo-zkchess/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Youtube-episode-Nitya.png 300w,
+                    /content/images/size/w600/2024/10/Youtube-episode-Nitya.png 600w,
+                    /content/images/size/w1000/2024/10/Youtube-episode-Nitya.png 1000w,
+                    /content/images/size/w2000/2024/10/Youtube-episode-Nitya.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Youtube-episode-Nitya.png"
+            alt="[Podcast #1] Matteo on play-by-email provable games"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/podcast-1-matteo-zkchess/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">podcast</span>
+                </div>
+                <h2 class="post-card-title">
+                    [Podcast #1] Matteo on play-by-email provable games
+                </h2>
+            </header>
+                <div class="post-card-excerpt">On the Hylé podcast, we talk about cool applications that leverage cryptography in general and zero-knowledge technology in particular, with a new guest every episode.
+
+Our guest for this first episode, Matteo, is an independent applied cryptography developer. He is also Hylé’s first grantee, and he built a play-by-email</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-24">Oct 24, 2024</time>
+                <span class="post-card-meta-length">11 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-talks">
+
+    <a class="post-card-image-link" href="/email-proofs-vlayer/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/GabNIdkXkAAhp9k.jpg 300w,
+                    /content/images/size/w600/2024/10/GabNIdkXkAAhp9k.jpg 600w,
+                    /content/images/size/w1000/2024/10/GabNIdkXkAAhp9k.jpg 1000w,
+                    /content/images/size/w2000/2024/10/GabNIdkXkAAhp9k.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/GabNIdkXkAAhp9k.jpg"
+            alt="All about email proofs with vLayer, zkP2P, zkEmail and TACEO"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/email-proofs-vlayer/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">talks</span>
+                </div>
+                <h2 class="post-card-title">
+                    All about email proofs with vLayer, zkP2P, zkEmail and TACEO
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Sylve was invited to talk about email proofs on the vlayer Twitter account, alongside:
+
+ * TACEO&#39;s Ais
+ * vLayer&#39;s Marek
+ * zkEmail&#39;s Ayush
+ * zkP2P&#39;s Sachin
+
+You can watch the replay of the roundtable here:
+
+Email Proofs Demystified: the No BS Debate https://t.co/74q3M2Ltq2</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-23">Oct 23, 2024</time>
+                <span class="post-card-meta-length">1 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-delayed-proving tag-talks tag-gaming">
+
+    <a class="post-card-image-link" href="/some-like-it-proved/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hy5ZplLGbhY-SD-1.jpg 300w,
+                    /content/images/size/w600/2024/10/Hy5ZplLGbhY-SD-1.jpg 600w,
+                    /content/images/size/w1000/2024/10/Hy5ZplLGbhY-SD-1.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Hy5ZplLGbhY-SD-1.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hy5ZplLGbhY-SD-1.jpg"
+            alt="Some like it proved: an architecture for provable apps, with Lancelot at zkSummit 12"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/some-like-it-proved/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">delayed proving</span>
+                </div>
+                <h2 class="post-card-title">
+                    Some like it proved: an architecture for provable apps, with Lancelot at zkSummit 12
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Lancelot&#39;s talk at zkSummit 12 on what we think will be the future of dApps and smart contract development thanks to zero-knowledge proofs.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-21">Oct 21, 2024</time>
+                <span class="post-card-meta-length">9 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-talks">
+
+    <a class="post-card-image-link" href="/interview-what-is-hyle-with-sylve-on-the-gm-with-siborg-x-space/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Youtube-episode-template-1-.jpg 300w,
+                    /content/images/size/w600/2024/10/Youtube-episode-template-1-.jpg 600w,
+                    /content/images/size/w1000/2024/10/Youtube-episode-template-1-.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Youtube-episode-template-1-.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Youtube-episode-template-1-.jpg"
+            alt="[Interview] What is Hylé, with Sylve on the &quot;GM with Siborg&quot; X space"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/interview-what-is-hyle-with-sylve-on-the-gm-with-siborg-x-space/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">talks</span>
+                </div>
+                <h2 class="post-card-title">
+                    [Interview] What is Hylé, with Sylve on the &quot;GM with Siborg&quot; X space
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Missed the latest X Space hosted by SiBorg Labs, where Sylve talked about Hylé&#39;s vision and future?
+Our discussion is now available on YouTube. If you prefer the written format, you can find the full transcript below!</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-15">Oct 15, 2024</time>
+                <span class="post-card-meta-length">31 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-lean-blockchain">
+
+    <a class="post-card-image-link" href="/on-blockchains/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Template_black-1line-1.png 300w,
+                    /content/images/size/w600/2024/10/Template_black-1line-1.png 600w,
+                    /content/images/size/w1000/2024/10/Template_black-1line-1.png 1000w,
+                    /content/images/size/w2000/2024/10/Template_black-1line-1.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Template_black-1line-1.png"
+            alt="On blockchains"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/on-blockchains/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">lean blockchain</span>
+                </div>
+                <h2 class="post-card-title">
+                    On blockchains
+                </h2>
+            </header>
+                <div class="post-card-excerpt">A tangent from our upcoming whitepaper, in which we take the time to define what blockchains are.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-10">Oct 10, 2024</time>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post">
+
+    <a class="post-card-image-link" href="/hyle-joins-the-zkboost-consortium/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Slide-16_9---1-1-.png 300w,
+                    /content/images/size/w600/2024/10/Slide-16_9---1-1-.png 600w,
+                    /content/images/size/w1000/2024/10/Slide-16_9---1-1-.png 1000w,
+                    /content/images/size/w2000/2024/10/Slide-16_9---1-1-.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Slide-16_9---1-1-.png"
+            alt="Hylé joins the zkBoost Consortium"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/hyle-joins-the-zkboost-consortium/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                </div>
+                <h2 class="post-card-title">
+                    Hylé joins the zkBoost Consortium
+                </h2>
+            </header>
+                <div class="post-card-excerpt">We’re proud to say that Hylé has joined the zkBoost Consortium to advance proof supply chain abstraction and make building provable apps more effortless than ever before.
+
+
+What is the zkBoost consortium?
+
+The ZkBoost consortium is a group of 34 companies (and growing!) in the zero-knowledge tech space. We’</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-10-03">Oct 3, 2024</time>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-identity-abstraction">
+
+    <a class="post-card-image-link" href="/smart-wallets-must-be-provable/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Slide-16_9-1.png 300w,
+                    /content/images/size/w600/2024/10/Slide-16_9-1.png 600w,
+                    /content/images/size/w1000/2024/10/Slide-16_9-1.png 1000w,
+                    /content/images/size/w2000/2024/10/Slide-16_9-1.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Slide-16_9-1.png"
+            alt="Smart wallets must be provable"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/smart-wallets-must-be-provable/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">identity abstraction</span>
+                </div>
+                <h2 class="post-card-title">
+                    Smart wallets must be provable
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Explore the concept of smart wallets on the blockchain. Understand how they can go one step further.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-09-26">Sep 26, 2024</time>
+                <span class="post-card-meta-length">5 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-delayed-proving tag-lean-blockchain">
+
+    <a class="post-card-image-link" href="/an-introduction-to-delayed-proving/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Slide-16_9-2.jpg 300w,
+                    /content/images/size/w600/2024/10/Slide-16_9-2.jpg 600w,
+                    /content/images/size/w1000/2024/10/Slide-16_9-2.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Slide-16_9-2.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Slide-16_9-2.jpg"
+            alt="An introduction to delayed proving"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/an-introduction-to-delayed-proving/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">delayed proving</span>
+                </div>
+                <h2 class="post-card-title">
+                    An introduction to delayed proving
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Learn what is Delayed Proving on Hylé, how it works, how it differs from the status quo, and why you should care.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-09-12">Sep 12, 2024</time>
+                <span class="post-card-meta-length">6 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-provable-apps">
+
+    <a class="post-card-image-link" href="/what-is-a-provable-app/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image.jpg 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image.jpg 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image.jpg"
+            alt="What is a provable app?"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/what-is-a-provable-app/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">provable apps</span>
+                </div>
+                <h2 class="post-card-title">
+                    What is a provable app?
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Learn what provable apps are, how they work, how they compare to zkApps and why they are the future of a trustworthy Internet.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-08-22">Aug 22, 2024</time>
+                <span class="post-card-meta-length">7 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-trust-infrastructure tag-events tag-talks">
+
+    <a class="post-card-image-link" href="/trust-infrastructure-day-2024/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Visuel-Intro-TID.jpg 300w,
+                    /content/images/size/w600/2024/10/Visuel-Intro-TID.jpg 600w,
+                    /content/images/size/w1000/2024/10/Visuel-Intro-TID.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Visuel-Intro-TID.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Visuel-Intro-TID.jpg"
+            alt="Trust Infrastructure Day 2024"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/trust-infrastructure-day-2024/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">trust infrastructure</span>
+                </div>
+                <h2 class="post-card-title">
+                    Trust Infrastructure Day 2024
+                </h2>
+            </header>
+                <div class="post-card-excerpt">A list of all the video replays from Trust Infrastructure Day 2024, organized at Hylé and Aztec on July 10, 2024 at ETHCC.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-08-08">Aug 8, 2024</time>
+                <span class="post-card-meta-length">1 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-zkp">
+
+    <a class="post-card-image-link" href="/freedom-and-privacy-with-zero-knowledge-proofs/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image5.png 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image5.png 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image5.png 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image5.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image5.png"
+            alt="Freedom and privacy with zero-knowledge proofs"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/freedom-and-privacy-with-zero-knowledge-proofs/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">zkp</span>
+                </div>
+                <h2 class="post-card-title">
+                    Freedom and privacy with zero-knowledge proofs
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Zero-knowledge proofs allow you to decentralize execution, which gives you more freedom and privacy and makes blockchains more efficient.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-08-01">Aug 1, 2024</time>
+                <span class="post-card-meta-length">6 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-vibe-check tag-demo">
+
+    <a class="post-card-image-link" href="/introducing-vibe-check/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/telegram-cloud-photo-size-4-5814689419142219247-y.jpg 300w,
+                    /content/images/size/w600/2024/10/telegram-cloud-photo-size-4-5814689419142219247-y.jpg 600w,
+                    /content/images/size/w1000/2024/10/telegram-cloud-photo-size-4-5814689419142219247-y.jpg 1000w,
+                    /content/images/size/w2000/2024/10/telegram-cloud-photo-size-4-5814689419142219247-y.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/telegram-cloud-photo-size-4-5814689419142219247-y.jpg"
+            alt="Sylve Chevet smiling with the text you are vibing: a Vibe Check screenshot."
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/introducing-vibe-check/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">vibe check</span>
+                </div>
+                <h2 class="post-card-title">
+                    Introducing Vibe Check
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Introducing Vibe Check, a zkML &amp; WebAuthn Powered zkApp asserting a user has smiled and awarding test tokens accordingly on Hylé.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-07-25">Jul 25, 2024</time>
+                <span class="post-card-meta-length">3 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-zkp">
+
+    <a class="post-card-image-link" href="/a-simple-introduction-to-zero-knowledge-proofs-zkp/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image3.jpg 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image3.jpg 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image3.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image3.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image3.jpg"
+            alt="A simple introduction to zero-knowledge proofs (ZKP)"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/a-simple-introduction-to-zero-knowledge-proofs-zkp/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">zkp</span>
+                </div>
+                <h2 class="post-card-title">
+                    A simple introduction to zero-knowledge proofs (ZKP)
+                </h2>
+            </header>
+                <div class="post-card-excerpt">A simple introduction to zero-knowledge proofs and zk-rollups, that requires no previous understanding of cryptography or blockchain at all.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-07-18">Jul 18, 2024</time>
+                <span class="post-card-meta-length">7 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-partnerships">
+
+    <a class="post-card-image-link" href="/hyle-x-sindri-the-easiest-way-to-harness-zero-knowledge-technology/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image4.jpg 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image4.jpg 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image4.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image4.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image4.jpg"
+            alt="Hylé × Sindri: the easiest way to harness zero-knowledge technology"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/hyle-x-sindri-the-easiest-way-to-harness-zero-knowledge-technology/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">partnerships</span>
+                </div>
+                <h2 class="post-card-title">
+                    Hylé × Sindri: the easiest way to harness zero-knowledge technology
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Hylé and Sindri are partnering up to bring you a seamless and extremely simple zero-knowledge proof framework for your apps.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-07-02">Jul 2, 2024</time>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-talks">
+
+    <a class="post-card-image-link" href="/do-we-need-blockchain-at-all/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image3.png 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image3.png 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image3.png 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image3.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image3.png"
+            alt="Do we need blockchain at all?"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/do-we-need-blockchain-at-all/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">talks</span>
+                </div>
+                <h2 class="post-card-title">
+                    Do we need blockchain at all?
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Sylve studies a steam engine from Ancient Rome and discusses the future of zero-knowledge proofs. He asks: do we need blockchain at all?</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-06-27">Jun 27, 2024</time>
+                <span class="post-card-meta-length">7 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-lean-blockchain">
+
+    <a class="post-card-image-link" href="/proof-verification-needs-to-change/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image.png 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image.png 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image.png 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image.png"
+            alt="Proof verification needs to change"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/proof-verification-needs-to-change/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">lean blockchain</span>
+                </div>
+                <h2 class="post-card-title">
+                    Proof verification needs to change
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Zero-knowledge proofs are the future of blockchain. They enable great blockchain scalability while remaining trustless. But we&#39;re using them wrong. Today, onchain proof verification is really expensive and inefficient. It doesn&#39;t need to be that way.
+
+
+How verification works
+
+Let’s review how zero-knowledge proofs currently</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-06-14">Jun 14, 2024</time>
+                <span class="post-card-meta-length">4 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-use-cases tag-regulation tag-identity-and-authentication">
+
+    <a class="post-card-image-link" href="/zero-knowledge-is-the-future-of-the-european-digital-identity-framework-2/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image1.png 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image1.png 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image1.png 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image1.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image1.png"
+            alt="Zero-knowledge is the future of the European Digital Identity Framework"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/zero-knowledge-is-the-future-of-the-european-digital-identity-framework-2/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">use cases</span>
+                </div>
+                <h2 class="post-card-title">
+                    Zero-knowledge is the future of the European Digital Identity Framework
+                </h2>
+            </header>
+                <div class="post-card-excerpt">The European Commission is pushing for a European Digital Identity Framework for secure public electronic identification, giving access to public national and international services. And they recommend zero-knowledge proofs to do so!
+
+Let’s talk about what this means.
+
+
+What’s the European Digital Identity Framework?
+
+
+Context on the European</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-06-04">Jun 4, 2024</time>
+                <span class="post-card-meta-length">4 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-partnerships">
+
+    <a class="post-card-image-link" href="/hyle-x-marlin-tee-backed-proving-verifying-for-noir-programs/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image2.jpg 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image2.jpg 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image2.jpg 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image2.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image2.jpg"
+            alt="Hylé × Marlin: TEE-backed proving &amp; verifying for Noir programs"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/hyle-x-marlin-tee-backed-proving-verifying-for-noir-programs/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">partnerships</span>
+                </div>
+                <h2 class="post-card-title">
+                    Hylé × Marlin: TEE-backed proving &amp; verifying for Noir programs
+                </h2>
+            </header>
+                <div class="post-card-excerpt">We’re thrilled to announce that Hylé and Marlin are partnering to build a more secure and interconnected world. Using Hylé and Marlin, you can generate proofs and get them verified easily and cheaply while maintaining maximum security.
+
+
+Our shared vision
+
+Our shared goal is simple: We want to lower</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-05-30">May 30, 2024</time>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-provable-apps tag-talks">
+
+    <a class="post-card-image-link" href="/brave-new-provable-world/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/project1.png 300w,
+                    /content/images/size/w600/2024/10/project1.png 600w,
+                    /content/images/size/w1000/2024/10/project1.png 1000w,
+                    /content/images/size/w2000/2024/10/project1.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/project1.png"
+            alt="Brave new provable world"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/brave-new-provable-world/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">provable apps</span>
+                </div>
+                <h2 class="post-card-title">
+                    Brave new provable world
+                </h2>
+            </header>
+                <div class="post-card-excerpt">The future is exciting as long as we ensure we’re headed in the right direction. In today&#39;s post, based on Sylve’s presentation Brave New Provable World at StarkNetCC 2023, we’ll discuss what we’re excited about: zero-knowledge proofs.
+
+
+Zero-knowledge proofs: where we’re at
+
+So</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-05-22">May 22, 2024</time>
+                <span class="post-card-meta-length">4 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-partnerships">
+
+    <a class="post-card-image-link" href="/hyle-x-gevulot-end-to-end-censorship-resistant-proving-verifying/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/Hyle-blog-featured-image-1.png 300w,
+                    /content/images/size/w600/2024/10/Hyle-blog-featured-image-1.png 600w,
+                    /content/images/size/w1000/2024/10/Hyle-blog-featured-image-1.png 1000w,
+                    /content/images/size/w2000/2024/10/Hyle-blog-featured-image-1.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/Hyle-blog-featured-image-1.png"
+            alt="Hylé × Gevulot: end-to-end censorship resistant proving &amp; verifying"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/hyle-x-gevulot-end-to-end-censorship-resistant-proving-verifying/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">partnerships</span>
+                </div>
+                <h2 class="post-card-title">
+                    Hylé × Gevulot: end-to-end censorship resistant proving &amp; verifying
+                </h2>
+            </header>
+                <div class="post-card-excerpt">We’re delighted to announce that Hylé and Gevulot have decided to work together on building a more secure and interconnected world, partnering up to offer you top-of-the-line zero-knowledge proof (ZKP) generation and verification services.
+
+
+Our shared vision
+
+Together, we want to work toward the future of hybrid computation, where</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-05-17">May 17, 2024</time>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+            
+<article class="post-card post tag-news">
+
+    <a class="post-card-image-link" href="/hyle-raises-3-4m-to-build-the-future-of-zk-proof-verification/">
+
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2024/10/project.png 300w,
+                    /content/images/size/w600/2024/10/project.png 600w,
+                    /content/images/size/w1000/2024/10/project.png 1000w,
+                    /content/images/size/w2000/2024/10/project.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/content/images/size/w600/2024/10/project.png"
+            alt="Hylé raises $3.4M to build the future of zk-proof verification"
+            loading="lazy"
+        />
+
+
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/hyle-raises-3-4m-to-build-the-future-of-zk-proof-verification/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-primary-tag">News</span>
+                </div>
+                <h2 class="post-card-title">
+                    Hylé raises $3.4M to build the future of zk-proof verification
+                </h2>
+            </header>
+                <div class="post-card-excerpt">We are delighted to announce the closing of our seed round, led by Framework Ventures and bringing us to a total of $3.4M in funding! This round was co-led by Cherry Crypto, with support from Fabric Ventures, Frst Capital, and Heartcore Capital. In addition to these firms, we received</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-05-14">May 14, 2024</time>
+                <span class="post-card-meta-length">3 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+    </div>
+
+    <nav class="pagination">
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+
+
+</div>
+</main>
+
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="https://blog.hyle.eu">Hylé</a> &copy; 2024</section>
+            <nav class="site-footer-nav">
+                <ul class="nav">
+    <li class="nav-sign-up nav-current"><a href="#/portal/">Sign up</a></li>
+    <li class="nav-twitter"><a href="https://x.com/hyle_org">Twitter</a></li>
+    <li class="nav-github"><a href="https://github.com/Hyle-org/hyle">GitHub</a></li>
+    <li class="nav-farcaster"><a href="https://warpcast.com/hyle-org">Farcaster</a></li>
+    <li class="nav-linkedin"><a href="https://www.linkedin.com/company/hyl-/">LinkedIn</a></li>
+    <li class="nav-youtube"><a href="https://www.youtube.com/@Hyl%C3%A9-org">YouTube</a></li>
+    <li class="nav-telegram"><a href="https://t.me/hyle_org">Telegram</a></li>
+</ul>
+
+            </nav>
+            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+        </div>
     </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="https://blog.hyle.eu/assets/built/casper.js?v=f7524e6298"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+
+
 </body>
 </html>
