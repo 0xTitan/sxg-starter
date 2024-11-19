@@ -44,8 +44,8 @@ jobs:
         run: |
           # Load environment variables from .env if not already loaded
           if [ -z "${SITE_NAME}" ]; then
-            if [ -f .functions/.env ]; then
-              export $(grep -v '^#' .functions/.env | xargs)
+            if [ -f /functions/.env ]; then
+              export $(grep -v '^#' /functions/.env | xargs)
             fi
           fi
 
