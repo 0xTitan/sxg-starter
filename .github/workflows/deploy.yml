@@ -80,7 +80,7 @@ jobs:
           -certUrl "${DOMAIN}/cert.cbor" \
           -validityUrl "${DOMAIN}/resource.validity.msg" \
           -o "functions/sxg/${SITE_NAME}.${SXG_NAME}"
-          cp "functions/sxg/${SITE_NAME}.${SXG_NAME}"" public
+          cp "functions/sxg/${SITE_NAME}.${SXG_NAME}" public
           cp cert.cbor public
           cp cert.pem public
 
