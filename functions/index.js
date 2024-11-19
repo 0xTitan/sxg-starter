@@ -1,22 +1,21 @@
 const functions = require("firebase-functions");
 const path = require("path");
-const dotenv = require("dotenv");
+require("dotenv").config();
 // All available logging functions
 const {debug, error} = require("firebase-functions/logger");
 
 // Resolve the path to the .env file in the upper directory
-const envPath = path.resolve(__dirname, "../.env");
+// const envPath = path.resolve(__dirname, "../.env");
 
 // Load the .env file
-dotenv.config({path: envPath});
+// dotenv.config({path: envPath});
 
 exports.serveSXG = functions.https.onRequest((req, response) => {
   const page = req.path;
   const headers = req.headers["accept"] || "";
   const sxgPath = path.resolve(
       __dirname,
-      "./sxg/" + process.env.SITE_NAME + "." + process.env.SXG_NAME,
-  );
+      "./sxg/" + process.env.SITE_NAME + "." + process.env.SXG_NAME);
   const htmlPath = path.join(__dirname, "../public/" + process.env.PAGE_NAME);
 
   debug("Page being called:", page);
