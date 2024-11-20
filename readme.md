@@ -2,6 +2,7 @@
 
 A Firebase site deployment template featuring Signed Exchange (SXG) integration.
 When deploying the site to firebase it will auto generate an sxg file with the content defined in ```functions/sxg/payload.html```
+The goal is to provide an easy and quick way to host and serve an sxg file.
 
 ## Features
 - **Signed Exchange (SXG)**
@@ -28,3 +29,9 @@ When deploying the site to firebase it will auto generate an sxg file with the c
 
 3. Add your firebase access token to ```github->Settings->Secrets and variables->Actions->Repository secrets```
 Is should be named : ```FIREBASE_TOKEN```
+
+4. Once deployed check sxg is loaded by starting chrome using this command, replace path to cert.pem and url to the page hosting the sxg :
+```google-chrome-stable \
+  --user-data-dir=/tmp/udd \
+  --ignore-certificate-errors-spki-list=$(curl -s https://zk-sxg.web.app/cert.pem | openssl x509 -noout -pubkey | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64) \
+  https://zk-sxg.web.app/hello.html```
