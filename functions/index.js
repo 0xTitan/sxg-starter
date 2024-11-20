@@ -4,12 +4,6 @@ require("dotenv").config();
 // All available logging functions
 const {debug, error} = require("firebase-functions/logger");
 
-// Resolve the path to the .env file in the upper directory
-// const envPath = path.resolve(__dirname, "../.env");
-
-// Load the .env file
-// dotenv.config({path: envPath});
-
 exports.serveSXG = functions.https.onRequest((req, response) => {
   const page = req.path;
   const headers = req.headers["accept"] || "";
@@ -33,7 +27,6 @@ exports.serveSXG = functions.https.onRequest((req, response) => {
       }
     });
   } else {
-    // eslint-disable-next-line max-len
     response.send(
         `<h1>Hi !</h1></br>Page called: ${page} with headers : ${headers}`,
     );
