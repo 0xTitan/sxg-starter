@@ -11,9 +11,9 @@ When deploying the site to firebase it will auto generate an sxg file with the c
 
 ### Prerequisites
 - Node.js (v18 or later)
-- go
-- Signed Exchange Library
-- Firebase CLI installed
+- go : https://go.dev/doc/install
+- Signed Exchange Library : ```go install github.com/WICG/webpackage/go/signedexchange/cmd/...@latest```
+- Firebase CLI installed : ```npm install -g firebase-tools```
 - A Firebase project with **Hosting** and **Functions** enabled
 
 ### Installation
