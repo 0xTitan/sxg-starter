@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "zk-sxg2",
     "public": "public",
     "ignore": [
       "firebase.json",
