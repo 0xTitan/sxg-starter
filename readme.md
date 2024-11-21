@@ -1,4 +1,4 @@
-# zk-sxg
+# sxg-starter
 
 A Firebase site deployment template featuring Signed Exchange (SXG) integration.
 When deploying the site to firebase it will auto generate an sxg file with the content defined in ```functions/sxg/payload.html```
@@ -20,8 +20,8 @@ The goal is to provide an easy and quick way to host and serve an sxg file.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/0xTitan/zk-sxg.git
-   cd zk-sxg
+   git clone https://github.com/0xTitan/sxg-starter.git
+   cd sxg-starter
 2. Adapat to your needs :
 - ```functions/.env```
 - ```firebase.json```
