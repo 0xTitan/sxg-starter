@@ -63,7 +63,7 @@ jobs:
           echo "uri : ${URI}"
 
           # Perform replacement in public/index.html
-          sed -i "s/\[PAGE_NAME\]/${URI}/" public/index.html
+          sed -i "s|\[PAGE_NAME\]|${URI}|" public/index.html
 
           # Display the command with resolved variables
           echo "$HOME/go/bin/gen-signedexchange \
