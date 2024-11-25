@@ -55,19 +55,19 @@ jobs:
 
           # build domain
           DOMAIN="https://${SITE_NAME}"
-
+          URI="${DOMAIN}/${PAGE_NAME}" 
           echo "SITE_NAME: ${SITE_NAME}"
           echo "DOMAIN: ${DOMAIN}"
           echo "PAGE_NAME: ${PAGE_NAME}"
           echo "SXG_NAME: ${SXG_NAME}"
-          echo "uri : ${DOMAIN}/${PAGE_NAME}"
+          echo "uri : ${URI}"
 
           # Perform replacement in public/index.html
-          sed -i "s/\[PAGE_NALE\]/${PAGE_NAME}/" public/index.html
+          sed -i "s/\[PAGE_NAME\]/${URI}/" public/index.html
 
           # Display the command with resolved variables
           echo "$HOME/go/bin/gen-signedexchange \
-          -uri \"${DOMAIN}/${PAGE_NAME}\" \
+          -uri \"${URI}\" \
           -content ./functions/sxg/payload.html \
           -certificate cert.pem \
           -privateKey priv.key \
