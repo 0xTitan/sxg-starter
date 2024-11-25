@@ -62,6 +62,9 @@ jobs:
           echo "SXG_NAME: ${SXG_NAME}"
           echo "uri : ${DOMAIN}/${PAGE_NAME}"
 
+          # Perform replacement in public/index.html
+          sed -i "s/\[PAGE_NALE\]/${PAGE_NAME}/" public/index.html
+
           # Display the command with resolved variables
           echo "$HOME/go/bin/gen-signedexchange \
           -uri \"${DOMAIN}/${PAGE_NAME}\" \
