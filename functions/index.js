@@ -12,7 +12,7 @@ exports.serveSXG = functions.https.onRequest((req, response) => {
       __dirname,
       "./sxg/" + process.env.SITE_NAME + "." + process.env.SXG_NAME,
   );
-  const htmlPath = path.join(__dirname, "../public/" + process.env.PAGE_NAME);
+  const htmlPath = path.join(__dirname, "../public/index.html");
 
   debug("Page being called:", page);
   debug("sxgPath:", sxgPath);

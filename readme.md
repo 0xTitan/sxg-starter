@@ -35,7 +35,7 @@ Is should be named : ```FIREBASE_TOKEN```
 google-chrome-stable \
   --user-data-dir=/tmp/udd \
   --ignore-certificate-errors-spki-list=$(curl -s https://sxg-starter.web.app/cert.pem | openssl x509 -noout -pubkey | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64) \
-  https://sxg-starter.web.app/hello.html
+  https://sxg-starter.web.app/sxg.html
 ```
 
 5. Chrome Sxg Extension
