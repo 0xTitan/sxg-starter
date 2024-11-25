@@ -3,14 +3,14 @@ const path = require("path");
 const fs = require("fs");
 require("dotenv").config();
 // All available logging functions
-const { debug, error } = require("firebase-functions/logger");
+const {debug, error} = require("firebase-functions/logger");
 
 exports.serveSXG = functions.https.onRequest((req, response) => {
   const page = req.path;
   const headers = req.headers["accept"] || "";
   const sxgPath = path.resolve(
-    __dirname,
-    "./sxg/" + process.env.SITE_NAME + "." + process.env.SXG_NAME
+      __dirname,
+      "./sxg/" + process.env.SITE_NAME + "." + process.env.SXG_NAME,
   );
   const htmlPath = path.join(__dirname, "../public/" + process.env.PAGE_NAME);
 
