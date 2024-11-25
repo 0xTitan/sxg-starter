@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "sxg-starter",
+    "site": "demo-sxg",
     "public": "public",
     "ignore": [
       "firebase.json",
