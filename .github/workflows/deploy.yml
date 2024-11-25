@@ -90,6 +90,7 @@ jobs:
           cp "functions/sxg/${SITE_NAME}.${SXG_NAME}" public
           cp cert.cbor public
           cp cert.pem public
+          cp public/index.html functions
 
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase
