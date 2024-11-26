@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "sxg-web",
+    "site": "mysxg-website",
     "public": "public",
     "ignore": [
       "firebase.json",
