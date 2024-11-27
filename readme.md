@@ -41,3 +41,7 @@ google-chrome-stable \
 5. Chrome Sxg Extension
 
  https://chromewebstore.google.com/detail/sxg-validator/hiijcdgcphjeljafieaejfhodfbpmgoe?pli=1
+
+6. Video explanation
+
+  https://share.descript.com/view/tvNSMUDp4j6
